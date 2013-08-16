@@ -22,8 +22,9 @@ library
   exposed-modules:     Data.Vinyl, Data.Vinyl.Field, Data.Vinyl.Lens,
                        Data.Vinyl.Witnesses, Data.Vinyl.Rec,
                        Data.Vinyl.Relation, Data.Vinyl.Unicode,
-                       Data.Vinyl.Classes, Data.Vinyl.Validation
-  build-depends:       base ==4.6.*, lens >=3.8, ghc-prim, mtl
+                       Data.Vinyl.Classes, Data.Vinyl.Validation,
+                       Data.Vinyl.TH
+  build-depends:       base ==4.6.*, lens >=3.8, ghc-prim, mtl, template-haskell
   default-language:    Haskell2010
 
 benchmark bench-builder-all
@@ -32,7 +33,7 @@ benchmark bench-builder-all
   main-is:          StorableBench.hs
   build-depends:    base, vector, criterion, vinyl, mwc-random, linear
   ghc-options:      -O2 -fllvm
-  default-language: Haskell2010                            
+  default-language: Haskell2010
 
 test-suite doctests
   type:             exitcode-stdio-1.0
